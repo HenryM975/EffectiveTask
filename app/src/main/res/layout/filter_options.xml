@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="414dp"
+    android:layout_height="375dp"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white1"
+        app:cardCornerRadius="25dp"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/filerBackToMain"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/bluebutton"
+                android:drawableBottom="@drawable/close_white"
+                android:paddingBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="28dp"
+                android:text="Filter options"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toStartOf="@+id/filterbackToMain"
+                app:layout_constraintStart_toEndOf="@id/filerBackToMain"
+                tools:layout_editor_absoluteY="27dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/filterbackToMain"
+                android:layout_width="86dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/orangebutton"
+                android:text="Done"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--<EditText
+                android:id="@+id/brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="196dp"
+                android:hint="brand"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />-->
+
+
+            <TextView
+                android:id="@+id/filterbrandtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="40dp"
+                android:text="Brand"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filerBackToMain" />
+
+            <Spinner
+                android:id="@+id/filterBrandSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:entries="@array/Brandspinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filterbrandtext"></Spinner>
+
+            <TextView
+                android:id="@+id/filterpricetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:text="Price"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filterBrandSpinner" />
+
+            <Spinner
+                android:id="@+id/filterPriceSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:entries="@array/Prisespinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filterpricetext"></Spinner>
+
+            <TextView
+                android:id="@+id/filterSizeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:text="Size"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filterPriceSpinner" />
+
+            <Spinner
+                android:id="@+id/filterSizeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="16dp"
+                android:entries="@array/Sizespinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filterSizeText"></Spinner>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white1"
+    tools:context=".DetailsActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backToMain"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/bluebutton"
+                android:drawableTop="@drawable/back"
+                android:paddingTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/toCard"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="43dp"
+                android:background="@drawable/orangebutton"
+                android:drawableTop="@drawable/bag"
+                android:paddingTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/DetailsHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Product Details"
+                android:textSize="18dp"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toStartOf="@+id/toCard"
+                app:layout_constraintHorizontal_bias="0.518"
+                app:layout_constraintStart_toEndOf="@+id/backToMain"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <HorizontalScrollView
+                android:id="@+id/productReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/DetailsHead"
+                tools:layout_editor_absoluteX="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageProduct"
+                        android:layout_width="150dp"
+                        android:layout_height="350dp"
+                        app:srcCompat="@drawable/detailsimg2"
+                        tools:layout_editor_absoluteX="1dp"
+                        tools:layout_editor_absoluteY="48dp" />
+
+                    <ImageView
+                        android:id="@+id/imageProduct1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/product1"
+                        tools:layout_editor_absoluteX="36dp"
+                        app:layout_constraintStart_toEndOf="@id/imageProduct"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <ImageView
+                        android:id="@+id/imageProduct2"
+                        android:layout_width="150dp"
+                        android:layout_height="350dp"
+                        app:layout_constraintStart_toEndOf="@id/imageProduct1"
+                        app:srcCompat="@drawable/detailsimg1"
+                        tools:layout_editor_absoluteY="16dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintTop_toBottomOf="@id/productReview">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="43dp"
+                        android:layout_marginTop="8dp"
+                        android:numStars="5"
+                        android:paddingTop="8dp"
+                        android:progressTint="@color/yellow"
+                        android:rating="4"
+                        android:stepSize="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/nameProductDetails" />
+
+                    <TextView
+                        android:id="@+id/nameProductDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="60dp"
+                        android:text="Galaxy Note 20 Ultra"
+                        android:textColor="@color/blue"
+                        android:textSize="25dp"
+                        app:layout_constraintEnd_toStartOf="@+id/likeProductDetails"
+                        tools:layout_editor_absoluteY="14dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/likeProductDetails"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="43dp"
+                        android:background="@drawable/bluebutton"
+                        android:drawableTop="@drawable/whitelike"
+                        android:paddingTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                        app:srcCompat="@drawable/productdetailparams" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView"
+                        app:srcCompat="@drawable/filterbottom" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

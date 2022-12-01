@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white1"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/locationname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/location"
+        android:drawableRight="@drawable/checkmark"
+        android:text="Zihuatanejo, Gro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<TextView
+        android:id="@+id/apitest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/locationname"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/filter_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="96dp"
+        android:background="?android:selectableItemBackground"
+        android:drawableTop="@drawable/filter"
+        android:paddingTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/locationname"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:text="Select Category"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="-1dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/viewAll0"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="172dp"
+                android:background="?android:selectableItemBackground"
+                android:text="see more"
+                android:textColor="@color/orange"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@id/textView1"
+                tools:layout_editor_absoluteY="8dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizont1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/textView1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Category0button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/bncategoryon"
+                        android:drawableTop="@drawable/phoneicon"
+                        android:paddingTop="25dp" />
+
+                    <TextView
+                        android:id="@+id/imageEllipse0text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:text="Phones"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Category0button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Category1button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/compuctericon"
+                        android:paddingTop="25dp"
+                        app:layout_constraintStart_toEndOf="@id/Category0button"
+                        tools:layout_editor_absoluteY="0dp" />
+
+
+                    <TextView
+                        android:id="@+id/imageEllipse1text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="40dp"
+                        android:text="Computer"
+                        app:layout_constraintStart_toEndOf="@id/imageEllipse0text"
+                        app:layout_constraintTop_toBottomOf="@id/Category1button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Category2button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/hearticon"
+                        android:paddingTop="25dp"
+                        app:layout_constraintStart_toEndOf="@id/Category1button"
+                        tools:layout_editor_absoluteY="0dp" />
+
+
+                    <TextView
+                        android:id="@+id/imageEllipse2text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="44dp"
+                        android:text="Health"
+                        app:layout_constraintStart_toEndOf="@id/imageEllipse1text"
+                        app:layout_constraintTop_toBottomOf="@id/Category2button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Category3button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/booksicon"
+                        android:paddingTop="25dp"
+                        app:layout_constraintStart_toEndOf="@id/Category2button" />
+
+
+                    <TextView
+                        android:id="@+id/imageEllipse3text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="56dp"
+                        android:text="Books"
+                        app:layout_constraintStart_toEndOf="@id/imageEllipse2text"
+                        app:layout_constraintTop_toBottomOf="@id/Category3button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Category4button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="15dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/phoneicon"
+                        android:paddingTop="25dp"
+                        app:layout_constraintStart_toEndOf="@id/Category3button" />
+
+                    <TextView
+                        android:id="@+id/imageEllipse4text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="60dp"
+                        android:text="Other"
+                        app:layout_constraintStart_toEndOf="@id/imageEllipse3text"
+                        app:layout_constraintTop_toBottomOf="@id/Category4button" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+
+
+
+            <EditText
+                android:id="@+id/searchText"
+                android:layout_width="320dp"
+                android:layout_height="34dp"
+                android:background="@drawable/edittext"
+                android:drawableLeft="@drawable/search"
+                android:padding="7dp"
+                android:hint="Search"
+                app:layout_constraintTop_toBottomOf="@id/horizont1"
+                tools:layout_editor_absoluteX="0dp"
+                android:layout_margin="30dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/qrbutton"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bncategoryon"
+                android:drawableTop="@drawable/searchqr"
+                android:paddingTop="9dp"
+                app:layout_constraintStart_toEndOf="@id/searchText"
+                app:layout_constraintTop_toBottomOf="@id/horizont1"
+                android:layout_margin="30dp"/>
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="4dp"
+                android:text="Hot Sales"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/searchText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seeMoreButton0"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="12dp"
+                android:background="?android:selectableItemBackground"
+                android:text="see more"
+                android:textColor="@color/orange"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@id/textView2"
+                app:layout_constraintTop_toBottomOf="@id/qrbutton" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizont2"
+                android:layout_width="409dp"
+                android:layout_height="206dp"
+                android:layout_marginTop="4dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!--0-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/HotSales0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="378dp"
+                            android:layout_height="182dp"
+                            android:background="@drawable/phone0template">
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesnew0"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="15dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="16dp"
+                                android:textSize="10dp"
+                                android:textColor="@color/white"
+                                android:background="@drawable/bncategoryon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/hotsalesname0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Iphone12"
+                                android:textColor="@color/white1"
+                                android:textSize="25dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesnew0" />
+                            <TextView
+                                android:id="@+id/hotsalessubtitle0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Super.Mega.Rapido"
+                                android:textColor="@color/white1"
+                                android:textSize="11dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesname0" />
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesbuy0"
+                                android:layout_width="103dp"
+                                android:layout_height="23dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Buy Now"
+                                android:textSize="8dp"
+                                android:background="@drawable/whitebutton"
+                                app:circularflow_defaultRadius="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalessubtitle0" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+                    <!--1-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/HotSales1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintStart_toEndOf="@id/HotSales0">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="378dp"
+                            android:layout_height="182dp"
+                            android:background="@drawable/phone1template">
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesnew1"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="15dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="16dp"
+                                android:background="?android:selectableItemBackground"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/hotsalesname1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Iphone12"
+                                android:textColor="@color/white1"
+                                android:textSize="25dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesnew1" />
+                            <TextView
+                                android:id="@+id/hotsalessubtitle1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Super.Mega.Rapido"
+                                android:textColor="@color/white1"
+                                android:textSize="11dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesname1" />
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesbuy1"
+                                android:layout_width="103dp"
+                                android:layout_height="23dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/whitebutton"
+                                android:text="Buy Now"
+                                android:textSize="8dp"
+                                app:circularflow_defaultRadius="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalessubtitle1" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
+
+                    <!--2-->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/HotSales2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintStart_toEndOf="@id/HotSales1">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="378dp"
+                            android:layout_height="182dp"
+                            android:background="@drawable/phone2temlate">
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesnew2"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="15dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="16dp"
+                                android:background="?android:selectableItemBackground"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/hotsalesname2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:text="Xiaomi Mi 11 ultra"
+                                android:textColor="@color/white1"
+                                android:textSize="25dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesnew2" />
+                            <TextView
+                                android:id="@+id/hotsalessubtitle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Super.Mega.Rapido"
+                                android:textColor="@color/white1"
+                                android:textSize="11dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalesname2" />
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/hotsalesbuy2"
+                                android:layout_width="103dp"
+                                android:layout_height="23dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/whitebutton"
+                                android:text="Buy Now"
+                                android:textSize="8dp"
+                                app:circularflow_defaultRadius="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hotsalessubtitle2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:text="Best Seller"
+                android:textColor="@color/blue"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizont2" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seeMoreButton1"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="216dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:selectableItemBackground"
+                android:text="see more"
+                android:textColor="@color/orange"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@id/textView4"
+                app:layout_constraintTop_toBottomOf="@id/horizont2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bestSeller0"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:layout_editor_absoluteX="11dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bestSeller0LikeButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="136dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/likeon"
+                        android:paddingTop="6dp"
+                        app:layout_constraintStart_toStartOf="@+id/bestSeller0imgbn"
+                        app:layout_constraintTop_toTopOf="@+id/bestSeller0imgbn" />
+                    <ImageButton
+                        android:id="@+id/bestSeller0imgbn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:selectableItemBackground"
+                        app:srcCompat="@drawable/phone1" />
+
+                    <TextView
+                        android:id="@+id/bestSeller0price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="$300"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller0imgbn" />
+                    <TextView
+                        android:id="@+id/bestSeller0oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="$300"
+                        app:layout_constraintStart_toEndOf="@id/bestSeller0price"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller0imgbn" />
+
+                    <TextView
+                        android:id="@+id/bestSeller0title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Xiaomi Mi 10 Pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller0price" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bestSeller1"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintStart_toEndOf="@id/bestSeller0"
+                tools:layout_editor_absoluteX="11dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bestSeller1LikeButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="136dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/likeon"
+                        android:paddingTop="6dp"
+                        app:layout_constraintStart_toStartOf="@+id/bestSeller1imgbn"
+                        app:layout_constraintTop_toTopOf="@+id/bestSeller1imgbn" />
+                    <ImageButton
+                        android:id="@+id/bestSeller1imgbn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:selectableItemBackground"
+                        app:srcCompat="@drawable/phone2test" />
+
+                    <TextView
+                        android:id="@+id/bestSeller1price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="$300"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller1imgbn" />
+                    <TextView
+                        android:id="@+id/bestSeller1oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="$300"
+                        app:layout_constraintStart_toEndOf="@id/bestSeller1price"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller1imgbn" />
+
+                    <TextView
+                        android:id="@+id/bestSeller1title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Xiaomi Mi 10 Pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller1price" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bestSeller2"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/bestSeller0"
+                tools:layout_editor_absoluteX="11dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bestSeller2LikeButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="136dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/likeon"
+                        android:paddingTop="6dp"
+                        app:layout_constraintStart_toStartOf="@+id/bestSeller2imgbn"
+                        app:layout_constraintTop_toTopOf="@+id/bestSeller2imgbn" />
+                    <ImageButton
+                        android:id="@+id/bestSeller2imgbn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:selectableItemBackground"
+                        app:srcCompat="@drawable/phone3" />
+
+                    <TextView
+                        android:id="@+id/bestSeller2price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="$300"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller2imgbn" />
+                    <TextView
+                        android:id="@+id/bestSeller2oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="$300"
+                        app:layout_constraintStart_toEndOf="@id/bestSeller2price"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller2imgbn" />
+
+                    <TextView
+                        android:id="@+id/bestSeller2title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Xiaomi Mi 10 Pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller2price" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bestSeller3"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/bestSeller1"
+                app:layout_constraintStart_toEndOf="@id/bestSeller2"
+                tools:layout_editor_absoluteX="11dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bestSeller3LikeButton"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="136dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bncategoryoff"
+                        android:drawableTop="@drawable/likeon"
+                        android:paddingTop="6dp"
+                        app:layout_constraintStart_toStartOf="@+id/bestSeller3imgbn"
+                        app:layout_constraintTop_toTopOf="@+id/bestSeller3imgbn" />
+                    <ImageButton
+                        android:id="@+id/bestSeller3imgbn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="?android:selectableItemBackground"
+                        app:srcCompat="@drawable/phone" />
+
+                    <TextView
+                        android:id="@+id/bestSeller3price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="$300"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller3imgbn" />
+                    <TextView
+                        android:id="@+id/bestSeller3oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="$300"
+                        app:layout_constraintStart_toEndOf="@id/bestSeller3price"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller3imgbn" />
+
+                    <TextView
+                        android:id="@+id/bestSeller3title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Xiaomi Mi 10 Pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bestSeller3price" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
