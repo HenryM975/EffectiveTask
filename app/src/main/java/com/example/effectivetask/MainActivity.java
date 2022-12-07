@@ -2,11 +2,14 @@ package com.example.effectivetask;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -35,7 +38,14 @@ public class MainActivity extends AppCompatActivity{
 
     //best seller
     ImageButton phone4;
-    AppCompatButton phone4LikeButton;
+    AppCompatButton bestSeller0LikeButton;
+    AppCompatButton bestSeller1LikeButton;
+    AppCompatButton bestSeller2LikeButton;
+    AppCompatButton bestSeller3LikeButton;
+    TextView bestSeller0oldprice;
+    TextView bestSeller1oldprice;
+    TextView bestSeller2oldprice;
+    TextView bestSeller3oldprice;
     //Category
     AppCompatButton Category0button;
     AppCompatButton Category1button;
@@ -144,13 +154,75 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        phone4LikeButton = findViewById(R.id.bestSeller0LikeButton);
-        phone4LikeButton.setOnClickListener(new View.OnClickListener() {
+        bestSeller0LikeButton = findViewById(R.id.bestSeller0LikeButton);
+        bestSeller0LikeButton.setOnClickListener(new View.OnClickListener() {
+            int click = 0;
             @Override
             public void onClick(View view) {
-                //phone4LikeButton.setCompoundDrawables(R.drawable.likeoff);
+                click++;
+                Drawable drawableLikeOn = getResources().getDrawable(R.drawable.likeon);
+                Drawable drawableLikeOff = getResources().getDrawable(R.drawable.likeoff);
+                if(click % 2 == 1)
+                    bestSeller0LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOn, null, null);
+                else
+                    bestSeller0LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOff, null, null);
             }
         });
+        bestSeller1LikeButton = findViewById(R.id.bestSeller1LikeButton);
+        bestSeller1LikeButton.setOnClickListener(new View.OnClickListener() {
+            int click = 0;
+            @Override
+            public void onClick(View view) {
+                click++;
+                Drawable drawableLikeOn = getResources().getDrawable(R.drawable.likeon);
+                Drawable drawableLikeOff = getResources().getDrawable(R.drawable.likeoff);
+                if(click % 2 == 1)
+                    bestSeller1LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOn, null, null);
+                else
+                    bestSeller1LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOff, null, null);
+            }
+        });
+        bestSeller2LikeButton = findViewById(R.id.bestSeller2LikeButton);
+        bestSeller2LikeButton.setOnClickListener(new View.OnClickListener() {
+            int click = 0;
+            @Override
+            public void onClick(View view) {
+                click++;
+                Drawable drawableLikeOn = getResources().getDrawable(R.drawable.likeon);
+                Drawable drawableLikeOff = getResources().getDrawable(R.drawable.likeoff);
+                if(click % 2 == 1)
+                    bestSeller2LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOn, null, null);
+                else
+                    bestSeller2LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOff, null, null);
+            }
+        });
+        bestSeller3LikeButton = findViewById(R.id.bestSeller3LikeButton);
+        bestSeller3LikeButton.setOnClickListener(new View.OnClickListener() {
+            int click = 0;
+            @Override
+            public void onClick(View view) {
+                click++;
+                Drawable drawableLikeOn = getResources().getDrawable(R.drawable.likeon);
+                Drawable drawableLikeOff = getResources().getDrawable(R.drawable.likeoff);
+                if(click % 2 == 1)
+                    bestSeller3LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOn, null, null);
+                else
+                    bestSeller3LikeButton.setCompoundDrawablesWithIntrinsicBounds(null, drawableLikeOff, null, null);
+            }
+        });
+
+        bestSeller0oldprice = findViewById(R.id.bestSeller0oldprice);
+        bestSeller0oldprice.setText("$400");
+        bestSeller0oldprice.setPaintFlags(bestSeller0oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller1oldprice = findViewById(R.id.bestSeller1oldprice);
+        bestSeller1oldprice.setText("$300");
+        bestSeller1oldprice.setPaintFlags(bestSeller1oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller2oldprice = findViewById(R.id.bestSeller2oldprice);
+        bestSeller2oldprice.setText("$200");
+        bestSeller2oldprice.setPaintFlags(bestSeller2oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller3oldprice = findViewById(R.id.bestSeller3oldprice);
+        bestSeller3oldprice.setText("$100");
+        bestSeller3oldprice.setPaintFlags(bestSeller3oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
 
         //apitest
@@ -190,6 +262,8 @@ public class MainActivity extends AppCompatActivity{
 
 
         //filerSpinners
+
+        //urltest
 
 
 
