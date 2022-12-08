@@ -76,7 +76,7 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             MainActivity.hotsalesname0.setText((String) objhotsales0.get("title"));
             MainActivity.hotsalessubtitle0.setText((String) objhotsales0.get("subtitle"));
             if((Boolean) objhotsales0.get("is_new")){
-                //MainActivity.hotsalesnew0.setBackground(Drawable.createFromPath("@drawable/bncategoryon"));
+                MainActivity.hotsalesnew0.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew0.setText("New");
             }
             //if((Boolean) objhotsales0.get("is_buy")){
@@ -87,7 +87,7 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             MainActivity.hotsalesname1.setText((String) objhotsales1.get("title"));
             MainActivity.hotsalessubtitle1.setText((String) objhotsales1.get("subtitle"));
             if((Boolean) objhotsales1.get("is_new")){
-                //MainActivity.hotsalesnew1.setBackground(Drawable.createFromPath("@drawable/bncategoryon"));
+                MainActivity.hotsalesnew1.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew1.setText("New");
             }
             //if((Boolean) objhotsales1.get("is_buy")){
@@ -98,7 +98,7 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             MainActivity.hotsalesname2.setText((String) objhotsales2.get("title"));
             MainActivity.hotsalessubtitle2.setText((String) objhotsales2.get("subtitle"));
             if((Boolean) objhotsales2.get("is_new")){
-                //MainActivity.hotsalesnew2.setBackground(Drawable.createFromPath("@drawable/bncategoryon"));
+                MainActivity.hotsalesnew2.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew2.setText("New");
             }
             //if((Boolean) objhotsales2.get("is_buy")){

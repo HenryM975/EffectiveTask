@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity{
     //filter
     AppCompatButton filter;
     Dialog dialog;
+    //QR
+    AppCompatButton qrbutton;
 
     //best seller
     ImageButton phone4;
@@ -154,6 +156,8 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
+        //bestSellerLike
         bestSeller0LikeButton = findViewById(R.id.bestSeller0LikeButton);
         bestSeller0LikeButton.setOnClickListener(new View.OnClickListener() {
             int click = 0;
@@ -264,6 +268,16 @@ public class MainActivity extends AppCompatActivity{
         //filerSpinners
 
         //urltest
+
+        //QR
+        qrbutton = findViewById(R.id.qrbutton);
+        qrbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, QRActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
