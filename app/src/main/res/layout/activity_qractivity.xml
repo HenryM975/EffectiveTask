@@ -17,6 +17,8 @@
             android:orientation="vertical"
             android:id="@+id/qrlinear">
 
+
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/qradd"
                 android:layout_width="34dp"
@@ -27,7 +29,6 @@
                 android:drawableTop="@drawable/searchqr"
                 android:paddingTop="9dp"
                 app:layout_constraintStart_toEndOf="@id/searchText"
-                app:layout_constraintTop_toBottomOf="@id/horizont1"
                 android:layout_margin="30dp"/>
 
         </LinearLayout>

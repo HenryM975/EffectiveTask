@@ -2,6 +2,7 @@ package com.example.effectivetask;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
@@ -18,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +39,10 @@ public class MainActivity extends AppCompatActivity{
     Dialog dialog;
     //QR
     AppCompatButton qrbutton;
-
+    //Explorer
+    AppCompatButton ExplorerToCart;
+    AppCompatButton ExplorerToLike;
+    AppCompatButton ExplorerToProfile;
     //best seller
     ImageButton phone4;
     AppCompatButton bestSeller0LikeButton;
@@ -55,16 +60,22 @@ public class MainActivity extends AppCompatActivity{
     AppCompatButton Category3button;
     AppCompatButton Category4button;
     //apitest
+    //picassotest
+    static ImageView imageViewQrTest;
+
     //static TextView apitest;
     //hot sales
+    static ConstraintLayout hotsaleslayout0;
     static TextView hotsalesname0;
     static TextView hotsalessubtitle0;
     static AppCompatButton hotsalesnew0;
     static AppCompatButton hotsalesbuy0;
+    static ConstraintLayout hotsaleslayout1;
     static TextView hotsalesname1;
     static TextView hotsalessubtitle1;
     static AppCompatButton hotsalesnew1;
     static AppCompatButton hotsalesbuy1;
+    static ConstraintLayout hotsaleslayout2;
     static TextView hotsalesname2;
     static TextView hotsalessubtitle2;
     static AppCompatButton hotsalesnew2;
@@ -230,12 +241,10 @@ public class MainActivity extends AppCompatActivity{
 
 
         //apitest
+
         //apitest = findViewById(R.id.apitest);
 
-
         //hotsales
-        String url = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175";
-        new GetUrlData().execute(url);
         //0
         hotsalesname0 = findViewById(R.id.hotsalesname0);
         hotsalessubtitle0 = findViewById(R.id.hotsalessubtitle0);
@@ -251,6 +260,12 @@ public class MainActivity extends AppCompatActivity{
         hotsalessubtitle2 = findViewById(R.id.hotsalessubtitle2);
         hotsalesnew2 = findViewById(R.id.hotsalesnew2);
         hotsalesbuy2 = findViewById(R.id.hotsalesbuy2);
+        //hotsales API
+        String url = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175";
+        new GetUrlData().execute(url);
+        hotsaleslayout0 = findViewById(R.id.hotsaleslayout0);
+        hotsaleslayout1 = findViewById(R.id.hotsaleslayout1);
+        hotsaleslayout2 = findViewById(R.id.hotsaleslayout2);
 
 
 
@@ -260,9 +275,12 @@ public class MainActivity extends AppCompatActivity{
 
 
 
+
         //best seller
         //bestSeller0title = findViewById(R.id.bestSeller0title);
 
+        //picassotest
+        imageViewQrTest = findViewById(R.id.imageViewQrTest);
 
 
         //filerSpinners
@@ -279,12 +297,27 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        //Explorer
+        ExplorerToCart = findViewById(R.id.ExplorerToCart);
+        ExplorerToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CardActivity.class);
+                startActivity(intent);
+            }
+        });
+        ExplorerToLike = findViewById(R.id.ExplorerToLike);
+        ExplorerToLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
     }
-
-
     private void showFilterDialog() {
         dialog.setContentView(R.layout.filter_options);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -292,5 +325,9 @@ public class MainActivity extends AppCompatActivity{
         dialog.show();
         //dialog.dismiss();
     }
+
+
+
+
 
 }

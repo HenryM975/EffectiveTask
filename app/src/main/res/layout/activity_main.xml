@@ -271,6 +271,7 @@
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="8dp">
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/hotsaleslayout0"
                             android:layout_width="378dp"
                             android:layout_height="182dp"
                             android:background="@drawable/phone0template">
@@ -292,7 +293,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="12dp"
-                                android:text="Iphone12"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="25dp"
                                 android:textStyle="bold"
@@ -304,7 +305,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="4dp"
-                                android:text="Super.Mega.Rapido"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="11dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -317,7 +318,7 @@
                                 android:layout_marginTop="12dp"
                                 android:text="Buy Now"
                                 android:textSize="8dp"
-                                android:background="@drawable/whitebutton"
+                                android:background="?android:selectableItemBackground"
                                 app:circularflow_defaultRadius="10dp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/hotsalessubtitle0" />
@@ -335,6 +336,7 @@
                         app:cardCornerRadius="8dp"
                         app:layout_constraintStart_toEndOf="@id/HotSales0">
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/hotsaleslayout1"
                             android:layout_width="378dp"
                             android:layout_height="182dp"
                             android:background="@drawable/phone1template">
@@ -354,7 +356,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="12dp"
-                                android:text="Iphone12"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="25dp"
                                 android:textStyle="bold"
@@ -366,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="4dp"
-                                android:text="Super.Mega.Rapido"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="11dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -377,7 +379,7 @@
                                 android:layout_height="23dp"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="12dp"
-                                android:background="@drawable/whitebutton"
+                                android:background="?android:selectableItemBackground"
                                 android:text="Buy Now"
                                 android:textSize="8dp"
                                 app:circularflow_defaultRadius="10dp"
@@ -398,6 +400,7 @@
                         app:cardCornerRadius="8dp"
                         app:layout_constraintStart_toEndOf="@id/HotSales1">
                         <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/hotsaleslayout2"
                             android:layout_width="378dp"
                             android:layout_height="182dp"
                             android:background="@drawable/phone2temlate">
@@ -417,7 +420,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="12dp"
-                                android:text="Xiaomi Mi 11 ultra"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="25dp"
                                 android:textStyle="bold"
@@ -429,7 +432,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="4dp"
-                                android:text="Super.Mega.Rapido"
+                                android:text="..."
                                 android:textColor="@color/white1"
                                 android:textSize="11dp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -440,7 +443,7 @@
                                 android:layout_height="23dp"
                                 android:layout_marginStart="25dp"
                                 android:layout_marginTop="12dp"
-                                android:background="@drawable/whitebutton"
+                                android:background="?android:selectableItemBackground"
                                 android:text="Buy Now"
                                 android:textSize="8dp"
                                 app:circularflow_defaultRadius="10dp"
@@ -731,6 +734,92 @@
                         app:layout_constraintTop_toBottomOf="@id/bestSeller3price" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Explorer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/blue"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bestSeller3"
+                tools:layout_editor_absoluteX="11dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="38dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="21dp"
+                        android:drawableLeft="@drawable/dot"
+                        android:padding="10dp"
+                        android:text="Explorer"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/ExplorerToCart"
+                        android:layout_width="20dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="?android:selectableItemBackground"
+                        android:drawableTop="@drawable/bag"
+                        android:paddingTop="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/ExplorerToLike"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="?android:selectableItemBackground"
+                        android:drawableTop="@drawable/whitelike"
+                        android:paddingTop="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ExplorerToCart"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/ExplorerToProfile"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="?android:selectableItemBackground"
+                        android:drawableTop="@drawable/profile"
+                        android:paddingTop="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ExplorerToLike"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/imageViewQrTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars"
+                app:layout_constraintTop_toBottomOf="@id/Explorer"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

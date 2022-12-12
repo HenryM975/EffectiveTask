@@ -14,11 +14,11 @@
         android:text="Some text" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="X"
-        android:id="@+id/button2"
         android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="X" />
 </RelativeLayout>

@@ -5,6 +5,9 @@ import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -75,35 +78,53 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             JSONObject objhotsales0 = (JSONObject)val.get(0);
             MainActivity.hotsalesname0.setText((String) objhotsales0.get("title"));
             MainActivity.hotsalessubtitle0.setText((String) objhotsales0.get("subtitle"));
-            if((Boolean) objhotsales0.get("is_new")){
+            try{objhotsales0.get("is_new");
                 MainActivity.hotsalesnew0.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew0.setText("New");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            //if((Boolean) objhotsales0.get("is_buy")){
-            //    MainActivity.hotsalesbuy0.getResources().getDrawable(R.color.white1);//setBackground(Drawable.createFromPath("@color/white1"));//(Drawable.createFromPath("#f8f8f8"));
-            //}
+            if((Boolean) objhotsales0.get("is_buy")){
+                MainActivity.hotsalesbuy0.setBackgroundResource(R.drawable.whitebutton);
+            }
             //1
             JSONObject objhotsales1 = (JSONObject)val.get(1);
             MainActivity.hotsalesname1.setText((String) objhotsales1.get("title"));
             MainActivity.hotsalessubtitle1.setText((String) objhotsales1.get("subtitle"));
-            if((Boolean) objhotsales1.get("is_new")){
+            try{objhotsales1.get("is_new");
                 MainActivity.hotsalesnew1.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew1.setText("New");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            //if((Boolean) objhotsales1.get("is_buy")){
-            //    MainActivity.hotsalesbuy1.getResources().getDrawable(R.color.white1);
-            //}
+            if((Boolean) objhotsales0.get("is_buy")){
+                MainActivity.hotsalesbuy1.setBackgroundResource(R.drawable.whitebutton);
+            }
             //2
             JSONObject objhotsales2 = (JSONObject)val.get(2);
             MainActivity.hotsalesname2.setText((String) objhotsales2.get("title"));
             MainActivity.hotsalessubtitle2.setText((String) objhotsales2.get("subtitle"));
-            if((Boolean) objhotsales2.get("is_new")){
+            try {
+                objhotsales2.get("is_new");
                 MainActivity.hotsalesnew2.setBackgroundResource(R.drawable.bncategoryon);
                 MainActivity.hotsalesnew2.setText("New");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            //if((Boolean) objhotsales2.get("is_buy")){
-            //    MainActivity.hotsalesbuy2.getResources().getDrawable(R.color.white1);
-            //}
+            if((Boolean) objhotsales0.get("is_buy")){
+                MainActivity.hotsalesbuy2.setBackgroundResource(R.drawable.whitebutton);
+            }
+            //+img
+            try {
+                Drawable image =null;
+                URL url = new URL("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both");
+                Picasso.get()
+                        .load("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both")//!!!
+                        //.into((Target) MainActivity.hotsaleslayout0);не робит
+                        //.into(MainActivity.imageViewQrTest); //робит
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
 
 
             //best seller:
