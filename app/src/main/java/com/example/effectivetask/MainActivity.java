@@ -46,24 +46,30 @@ public class MainActivity extends AppCompatActivity{
     //best seller
     ImageButton phone4;
     AppCompatButton bestSeller0LikeButton;
+    static TextView bestSeller0oldprice;
+    static TextView bestSeller0title;
+    static TextView bestSeller0price;
     AppCompatButton bestSeller1LikeButton;
+    static TextView bestSeller1oldprice;
+    static TextView bestSeller1title;
+    static TextView bestSeller1price;
     AppCompatButton bestSeller2LikeButton;
+    static TextView bestSeller2oldprice;
+    static TextView bestSeller2title;
+    static TextView bestSeller2price;
     AppCompatButton bestSeller3LikeButton;
-    TextView bestSeller0oldprice;
-    TextView bestSeller1oldprice;
-    TextView bestSeller2oldprice;
-    TextView bestSeller3oldprice;
+    static TextView bestSeller3oldprice;
+    static TextView bestSeller3title;
+    static TextView bestSeller3price;
     //Category
     AppCompatButton Category0button;
     AppCompatButton Category1button;
     AppCompatButton Category2button;
     AppCompatButton Category3button;
     AppCompatButton Category4button;
-    //apitest
     //picassotest
     static ImageView imageViewQrTest;
 
-    //static TextView apitest;
     //hot sales
     static ConstraintLayout hotsaleslayout0;
     static TextView hotsalesname0;
@@ -83,8 +89,6 @@ public class MainActivity extends AppCompatActivity{
     //filter
     AppCompatButton filerBackToMain;
     //Spinner brandspinner;
-    //best seller
-    //static TextView bestSeller0title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -227,17 +231,21 @@ public class MainActivity extends AppCompatActivity{
         });
 
         bestSeller0oldprice = findViewById(R.id.bestSeller0oldprice);
-        bestSeller0oldprice.setText("$400");
         bestSeller0oldprice.setPaintFlags(bestSeller0oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller0title = findViewById(R.id.bestSeller0title);
+        bestSeller0price = findViewById(R.id.bestSeller0price);
         bestSeller1oldprice = findViewById(R.id.bestSeller1oldprice);
-        bestSeller1oldprice.setText("$300");
         bestSeller1oldprice.setPaintFlags(bestSeller1oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller1title = findViewById(R.id.bestSeller1title);
+        bestSeller1price = findViewById(R.id.bestSeller1price);
         bestSeller2oldprice = findViewById(R.id.bestSeller2oldprice);
-        bestSeller2oldprice.setText("$200");
         bestSeller2oldprice.setPaintFlags(bestSeller2oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller2title = findViewById(R.id.bestSeller2title);
+        bestSeller2price = findViewById(R.id.bestSeller2price);
         bestSeller3oldprice = findViewById(R.id.bestSeller3oldprice);
-        bestSeller3oldprice.setText("$100");
         bestSeller3oldprice.setPaintFlags(bestSeller3oldprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        bestSeller3title = findViewById(R.id.bestSeller3title);
+        bestSeller3price = findViewById(R.id.bestSeller3price);
 
 
         //apitest
@@ -269,18 +277,18 @@ public class MainActivity extends AppCompatActivity{
 
 
 
+
+
         //filter
         filerBackToMain = findViewById(R.id.filterbackToMain);
         //brand???
 
-
-
-
-        //best seller
-        //bestSeller0title = findViewById(R.id.bestSeller0title);
-
         //picassotest
         imageViewQrTest = findViewById(R.id.imageViewQrTest);
+
+
+
+
 
 
         //filerSpinners

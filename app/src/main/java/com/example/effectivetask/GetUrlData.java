@@ -2,10 +2,10 @@
 package com.example.effectivetask;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Target;
 
 import org.json.JSONArray;
@@ -116,10 +116,12 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             }
             //+img
             try {
-                Drawable image =null;
+                RequestCreator image =null;
                 URL url = new URL("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both");
-                Picasso.get()
-                        .load("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both")//!!!
+                //Picasso.get()
+                        //.load("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both")//!!!
+                        //.fit()
+                        //.into((Target) MainActivity.hotsaleslayout0);
                         //.into((Target) MainActivity.hotsaleslayout0);не робит
                         //.into(MainActivity.imageViewQrTest); //робит
             } catch (MalformedURLException e) {
@@ -127,11 +129,32 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             }
 
 
+
+
             //best seller:
-            //JSONArray val1 = (JSONArray) obj.get("best_seller");
+            JSONArray val0 = (JSONArray) obj.get("best_seller");
             //0
-            //JSONObject objbestseller0 = (JSONObject)val.get(0);
-            //MainActivity.bestSeller0title.setText((String) objbestseller0.get("title"));
+            JSONObject objbestseller0 = (JSONObject)val0.get(0);
+            MainActivity.bestSeller0title.setText((String) objbestseller0.get("title"));
+            MainActivity.bestSeller0price.setText((objbestseller0.get("discount_price")).toString());
+            MainActivity.bestSeller0oldprice.setText((objbestseller0.get("price_without_discount")).toString());
+            //"is_favorites"?
+            //1
+            JSONObject objbestseller1 = (JSONObject)val0.get(1);
+            MainActivity.bestSeller1title.setText((String) objbestseller1.get("title"));
+            MainActivity.bestSeller1price.setText((objbestseller1.get("discount_price")).toString());
+            MainActivity.bestSeller1oldprice.setText((objbestseller1.get("price_without_discount")).toString());
+            //2
+            JSONObject objbestseller2 = (JSONObject)val0.get(2);
+            MainActivity.bestSeller2title.setText((String) objbestseller2.get("title"));
+            MainActivity.bestSeller2price.setText((objbestseller2.get("discount_price")).toString());
+            MainActivity.bestSeller2oldprice.setText((objbestseller2.get("price_without_discount")).toString());
+            //3
+            JSONObject objbestseller3 = (JSONObject)val0.get(3);
+            MainActivity.bestSeller3title.setText((String) objbestseller3.get("title"));
+            MainActivity.bestSeller3price.setText((objbestseller3.get("discount_price")).toString());
+            MainActivity.bestSeller3oldprice.setText((objbestseller3.get("price_without_discount")).toString());
+            //+img+- change size
 
 
 

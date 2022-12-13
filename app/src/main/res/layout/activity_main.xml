@@ -286,7 +286,7 @@
                                 android:textColor="@color/white"
                                 android:background="?android:selectableItemBackground"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"/>
                             <TextView
                                 android:id="@+id/hotsalesname0"
                                 android:layout_width="wrap_content"
@@ -504,6 +504,7 @@
                         android:paddingTop="6dp"
                         app:layout_constraintStart_toStartOf="@+id/bestSeller0imgbn"
                         app:layout_constraintTop_toTopOf="@+id/bestSeller0imgbn" />
+
                     <ImageButton
                         android:id="@+id/bestSeller0imgbn"
                         android:layout_width="wrap_content"
