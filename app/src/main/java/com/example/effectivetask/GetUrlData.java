@@ -1,4 +1,3 @@
-//apitest
 package com.example.effectivetask;
 
 import android.annotation.SuppressLint;
@@ -25,7 +24,6 @@ public class GetUrlData extends AsyncTask<String, String, String> {
     protected void onPreExecute() {
         super.onPreExecute();
     }
-
     @Override
     protected String doInBackground(String... strings) {
         HttpURLConnection connection = null;
@@ -45,7 +43,6 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             while ((line = reader.readLine()) != null) {
                 buffer.append(line).append("\n");
             }
-
             return buffer.toString();
 
         } catch (MalformedURLException e) {
@@ -128,9 +125,6 @@ public class GetUrlData extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
 
-
-
-
             //best seller:
             JSONArray val0 = (JSONArray) obj.get("best_seller");
             //0
@@ -155,8 +149,6 @@ public class GetUrlData extends AsyncTask<String, String, String> {
             MainActivity.bestSeller3price.setText((objbestseller3.get("discount_price")).toString());
             MainActivity.bestSeller3oldprice.setText((objbestseller3.get("price_without_discount")).toString());
             //+img+- change size
-
-
 
         } catch (JSONException e) {
             e.printStackTrace();
