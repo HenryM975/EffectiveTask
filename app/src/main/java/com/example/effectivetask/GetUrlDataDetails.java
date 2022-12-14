@@ -44,11 +44,12 @@ public class GetUrlDataDetails extends AsyncTask<String, String, String>{
                 buffer.append(line).append("\n");
             }
             return buffer.toString();
-
         } catch (MalformedURLException e) {
+
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+
         } finally {
             if (connection != null)
                 connection.disconnect();
@@ -79,8 +80,9 @@ public class GetUrlDataDetails extends AsyncTask<String, String, String>{
                     .load((String)imageList.get(0))
                     .into(DetailsActivity.imageProduct0Details);
             Picasso.get()
-                    .load("https://img.ibxk.com.br/2020/09/23/23104013057475.jpg?w=1120&h=420&mode=crop&scale=both")
-                    .into(DetailsActivity.imageProduct0Details);
+                    .load((String)imageList.get(1))
+                    .into(DetailsActivity.imageProduct1Details);
+            //+params
 
         } catch (JSONException e) {
             e.printStackTrace();

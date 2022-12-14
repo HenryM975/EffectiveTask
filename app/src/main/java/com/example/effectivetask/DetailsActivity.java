@@ -20,6 +20,7 @@ public class DetailsActivity extends AppCompatActivity {
     static AppCompatButton color1Details;
     static AppCompatButton color2Details;
     static ImageView imageProduct0Details;
+    static ImageView imageProduct1Details;
     Button backToMain;
     Button toCard;
     @Override
@@ -52,6 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
         color1Details = findViewById(R.id.color1Details);
         color2Details = findViewById(R.id.color2Details);
         imageProduct0Details = findViewById(R.id.imageProduct0Details);
+        imageProduct1Details = findViewById(R.id.imageProduct1Details);
 
         String url = "https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5";
         new GetUrlDataDetails().execute(url);
