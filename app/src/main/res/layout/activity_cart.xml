@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CardActivity">
+    tools:context=".CartActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -87,18 +87,81 @@
                         android:layout_marginTop="72dp"
                         android:layout_marginEnd="31dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/cart" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/element1Cart"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView3"
+                        app:cardCornerRadius="8dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/element1ImgCart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/cartimg" />
+
+                            <TextView
+                                android:id="@+id/element1TitleCart"
+                                android:layout_width="145dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="1dp"
+                                android:text="sadasasdasd"
+                                app:layout_constraintStart_toEndOf="@id/element1ImgCart"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/element1PriceCart"
+                                android:layout_width="145dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="1000"
+                                android:textColor="@color/orange"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/element1ImgCart" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/element1TrashButtonCart"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="26dp"
+                                android:layout_marginEnd="3dp"
+                                android:layout_marginBottom="34dp"
+                                android:background="?android:selectableItemBackground"
+                                android:drawableTop="@drawable/trash"
+                                android:paddingTop="2dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+
 
                     <ImageView
                         android:id="@+id/imageView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
-                        android:layout_marginTop="36dp"
+                        android:layout_marginTop="140dp"
                         android:layout_marginEnd="31dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView3"
                         app:srcCompat="@drawable/cart" />
@@ -147,7 +210,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="282dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="30dp"
                         android:text="$6,000 us"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toEndOf="@+id/cardTotal"

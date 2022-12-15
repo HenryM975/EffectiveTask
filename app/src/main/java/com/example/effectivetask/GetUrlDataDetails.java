@@ -82,6 +82,13 @@ public class GetUrlDataDetails extends AsyncTask<String, String, String>{
             Picasso.get()
                     .load((String)imageList.get(1))
                     .into(DetailsActivity.imageProduct1Details);
+            DetailsActivity.textCpuDetails.setText((String) obj.get("CPU"));
+            DetailsActivity.textCamDetails.setText((String) obj.get("camera"));
+            DetailsActivity.textMemDetails.setText((String) obj.get("ssd"));
+            DetailsActivity.textSdDetails.setText((String) obj.get("sd"));
+            JSONArray memList = (JSONArray) obj.get("capacity");
+            DetailsActivity.mem0Details.setText((String) memList.get(0));
+            DetailsActivity.mem1Details.setText((String) memList.get(1));
             //+params
 
         } catch (JSONException e) {
