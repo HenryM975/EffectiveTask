@@ -1,7 +1,19 @@
 package com.example.effectivetask;
-
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
+import com.squareup.picasso.Target;
+import com.squareup.picasso.Transformation;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GetUrlDataCart extends AsyncTask<String, String, String> {
+public class GetUrlDataCart extends AsyncTask<String, String, String>{
 
     @Override
     protected String doInBackground(String... strings) {
@@ -52,13 +64,36 @@ public class GetUrlDataCart extends AsyncTask<String, String, String> {
         }
         return null;
     }
-
-
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
+        try {
+            JSONObject obj = new JSONObject(result);
+            CartActivity.cardDelivery1.setText((String) obj.get("delivery"));
+            CartActivity.cardTotal1.setText((obj.get("total")).toString());
+            JSONArray elementList = (JSONArray) obj.get("basket");
+            CartActivity.element0PriceCart.setText("nujnhujbhkbghk");
+            //0
+            JSONObject element0 = (JSONObject) elementList.get(0);
+            Picasso.get()
+                    .load((String) element0.get("images"))
+                    .into(CartActivity.element0ImgCart);
+            CartActivity.element0TitleCart.setText((String) element0.get("title"));
+            CartActivity.element0PriceCart.setText((element0.get("price")).toString());
+            //1
+            JSONObject element1 = elementList.getJSONObject(1);
+            Picasso.get()
+                    .load((String) element1.get("images"))
+                    .into(CartActivity.element1ImgCart);
+            CartActivity.element1TitleCart.setText((String) element1.get("title"));
+            CartActivity.element1PriceCart.setText((element1.get("price")).toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
     }
+
 }
