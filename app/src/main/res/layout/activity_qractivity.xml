@@ -5,32 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QRActivity">
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/qrlinear">
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/QRCard0"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardBackgroundColor="@color/yellow">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/qrlinear">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/qradd"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="32dp"
+                            android:background="@drawable/bncategoryon"
+                            android:drawableTop="@drawable/searchqr"
+                            android:paddingTop="9dp"
+                            app:layout_constraintStart_toEndOf="@id/searchText"
+                            android:layout_margin="30dp"/>
+                    </LinearLayout>
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/QRCard1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintTop_toBottomOf="@id/QRCard0"
+                app:cardBackgroundColor="@color/grey">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:id="@+id/progressbarQR1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ProgressBar
+                        android:id="@+id/progressbarHorizontalQR1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/progressbarQR1"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/qradd"
-                android:layout_width="34dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/bncategoryon"
-                android:drawableTop="@drawable/searchqr"
-                android:paddingTop="9dp"
-                app:layout_constraintStart_toEndOf="@id/searchText"
-                android:layout_margin="30dp"/>
 
-        </LinearLayout>
+
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/QRCard2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintTop_toBottomOf="@id/QRCard1"
+                app:cardBackgroundColor="@color/orange">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
