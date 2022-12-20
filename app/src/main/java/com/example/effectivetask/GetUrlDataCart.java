@@ -23,7 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GetUrlDataCart extends AsyncTask<String, String, String>{
+public class GetUrlDataCart extends AsyncTask<String, Void, String>{
 
     @Override
     protected String doInBackground(String... strings) {

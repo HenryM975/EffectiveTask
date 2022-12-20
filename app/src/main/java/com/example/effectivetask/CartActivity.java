@@ -49,5 +49,36 @@ public class CartActivity extends AppCompatActivity {
 
         String url = "https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149";
         new GetUrlDataCart().execute(url);
+        //?
+        /*GetUrlDataCart GUDC = new GetUrlDataCart();
+        GUDC.execute(url);
+        try {
+            JSONObject obj = new JSONObject(GUDC.get());
+            CartActivity.cardDelivery1.setText((String) obj.get("delivery"));
+            CartActivity.cardTotal1.setText((obj.get("total")).toString());
+            JSONArray elementList = (JSONArray) obj.get("basket");
+            CartActivity.element0PriceCart.setText("nujnhujbhkbghk");
+            //0
+            JSONObject element0 = (JSONObject) elementList.get(0);
+            Picasso.get()
+                    .load((String) element0.get("images"))
+                    .into(CartActivity.element0ImgCart);
+            CartActivity.element0TitleCart.setText((String) element0.get("title"));
+            CartActivity.element0PriceCart.setText((element0.get("price")).toString());
+            //1
+            JSONObject element1 = elementList.getJSONObject(1);
+            Picasso.get()
+                    .load((String) element1.get("images"))
+                    .into(CartActivity.element1ImgCart);
+            CartActivity.element1TitleCart.setText((String) element1.get("title"));
+            CartActivity.element1PriceCart.setText((element1.get("price")).toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
     }
 }

@@ -19,11 +19,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GetUrlData extends AsyncTask<String, String, String> {
+public class GetUrlData extends AsyncTask<String, Void, String> {
 
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
     @Override
     protected String doInBackground(String... strings) {
         HttpURLConnection connection = null;

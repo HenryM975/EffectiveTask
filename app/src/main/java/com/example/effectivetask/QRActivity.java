@@ -12,9 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.concurrent.TimeUnit;
 
 public class QRActivity extends AppCompatActivity {
@@ -24,6 +26,10 @@ public class QRActivity extends AppCompatActivity {
 
     //1
     ProgressBar progressbarQR1;
+    ProgressBar progressbarHorizontalQR1;
+    Button stopProgressbarHorizontalQR1Stop;
+    //2
+    TextView textViewQR2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +75,32 @@ public class QRActivity extends AppCompatActivity {
 
         //1
         progressbarQR1 = findViewById(R.id.progressbarQR1);
-        //QR1Background QR1 = new QR1Background();
-        //QR1.execute();
+        progressbarHorizontalQR1 = findViewById(R.id.progressbarHorizontalQR1);
+        stopProgressbarHorizontalQR1Stop = findViewById(R.id.stopProgressbarHorizontalQR1Stop);
+        new QR0Background().execute();
         new QR1Background().execute();
+        //stopProgressbarHorizontalQR1Stop.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        QR1Background.cancel(true);
+        //    }
+        //});
+
+
+        //2
+        textViewQR2 = findViewById(R.id.textViewQR2);
+        io.reactivex.Observable.range(1,100)
+                .subscribe(I -> textViewQR2.setText(I.toString()));//, TimeUnit.SECONDS.sleep(1););
+
 
 
     }
-    //1
-    class QR1Background extends AsyncTask<Void, Void, Void>{
+
+    private void startAsyncTaskInParallel(QR0Background qr0B) {
+    }
+
+    //1.0
+    class QR0Background extends AsyncTask<Void, Void, Void>{
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -97,4 +121,53 @@ public class QRActivity extends AppCompatActivity {
             progressbarQR1.setVisibility(View.INVISIBLE);
         }
     }
+    //1.1
+    class QR1Background extends AsyncTask<Void, Integer, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressbarHorizontalQR1.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressbarHorizontalQR1.setProgress(values[0]);
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                //int counter = 0;
+
+                for (int i = 0; i < 100; i++) {
+                    if (isCancelled())
+                        return null;
+                    TimeUnit.SECONDS.sleep(1);
+                    publishProgress(i);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void unused) {
+            super.onPostExecute(unused);
+            progressbarHorizontalQR1.setVisibility(View.INVISIBLE);
+        }
+        //@Override
+        //protected void onCancelled() {
+        //    super.onCancelled();
+        //}
+    }
+
+
+    //2,0
+
+
+
+
 }
