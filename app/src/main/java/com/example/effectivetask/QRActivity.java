@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,8 +17,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.schedulers.Schedulers;
 
 public class QRActivity extends AppCompatActivity {
     //0
@@ -30,6 +34,10 @@ public class QRActivity extends AppCompatActivity {
     Button stopProgressbarHorizontalQR1Stop;
     //2
     TextView textViewQR2;
+    Button Button0QR2;
+    //3
+    TextView textView0QR3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +96,21 @@ public class QRActivity extends AppCompatActivity {
 
 
         //2
+        //2.1
         textViewQR2 = findViewById(R.id.textViewQR2);
-        io.reactivex.Observable.range(1,100)
-                .subscribe(I -> textViewQR2.setText(I.toString()));//, TimeUnit.SECONDS.sleep(1););
+        //io.reactivex.Observable.range(1,100)
+         //       .flatMap(I -> Observable.just(I)
+           //             //.map(App::Sleep.Sec(I))
+             //           .subscribeOn(Schedulers.computation()))
+               //         .subscribe(I -> textViewQR2.setText(I.toString()));//, TimeUnit.SECONDS.sleep(1););
+        //2.2
+        Button0QR2 = findViewById(R.id.Button0QR2);
+
+
+        //3
+        textView0QR3 = findViewById(R.id.textView0QR3);
+
+
 
 
 
@@ -165,7 +185,13 @@ public class QRActivity extends AppCompatActivity {
     }
 
 
-    //2,0
+    //2.0
+    static class Sleep {
+        public static int Sec(int val) throws InterruptedException {
+            TimeUnit.SECONDS.sleep(5);
+            return val;
+        }
+    }
 
 
 
