@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,8 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QRActivity extends AppCompatActivity {
     //0
@@ -34,6 +37,7 @@ public class QRActivity extends AppCompatActivity {
     Button stopProgressbarHorizontalQR1Stop;
     //2
     TextView textViewQR2;
+    TextView textView1QR2;
     Button Button0QR2;
     //3
     TextView textView0QR3;
@@ -97,18 +101,85 @@ public class QRActivity extends AppCompatActivity {
 
         //2
         //2.1
-        textViewQR2 = findViewById(R.id.textViewQR2);
+        /*ArrayList<Integer> QR2List = new ArrayList<Integer>();
+        for(int i = 0; i < 100; i++)
+            QR2List.add(i);
+        Observable O1QR2 = Observable.fromIterable(QR2List);
+        O1QR2.map(i -> Integer.parseInt((String) i) * 2);
+        Observable O2QR2 = Observable.fromIterable(QR2List);
+        O2QR2.map(i -> Integer.parseInt((String) i) * 2);
+        Observable O3QR2 = (Observable) Observable.merge(O1QR2, O2QR2)
+                .debounce(10, TimeUnit.MILLISECONDS);
+                //.subscribe(i -> textViewQR2.setText(((Integer) i).toString()));//? io.reactivex.internal.observers.LambdaObserver cannot be cast to io.reactivex.Observable
+        /*Observable.fromIterable(QR2List)
+                .filter(i -> i % 2 == 0)
+                .subscribe(i ->textViewQR2.setText(i.toString()));
+
+
+
+
+
+        Observable o4QR2 = Observable.fromIterable(QR2List);
         //io.reactivex.Observable.range(1,100)
-         //       .flatMap(I -> Observable.just(I)
-           //             //.map(App::Sleep.Sec(I))
-             //           .subscribeOn(Schedulers.computation()))
-               //         .subscribe(I -> textViewQR2.setText(I.toString()));//, TimeUnit.SECONDS.sleep(1););
+        o4QR2.flatMap(I -> Observable.just(I) //+
+                        //.map(App::Sleep.Sec(I))
+                        //.timeInterval()
+                        .subscribeOn(Schedulers.computation()));
+                        //.subscribe(I -> textViewQR2.setText(I.toString()));//, TimeUnit.SECONDS.sleep(1););*/
+
+
+
+        ArrayList<Integer> QR2List = new ArrayList<Integer>();
+        for(int i = 0; i < 100; i++)
+            QR2List.add(i);
+        textViewQR2 = findViewById(R.id.textViewQR2);
+        //Observable O5QR2 = Observable.fromArray(QR2List);
+        //Observable O5QR2 = Observable.just(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Observable O5QR2 = Observable.just(1);//.range(1, 10);
+        O5QR2.subscribeOn(Schedulers.newThread())
+                .delay(2, TimeUnit.SECONDS)//первичная задержка
+                .interval(10, TimeUnit.MILLISECONDS)//промежуточный интервал без пропусков бесконечный
+                .subscribe(I ->
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                textViewQR2.append(I.toString());
+                                // Stuff that updates the UI
+                            }
+                        }));
+
+
+        textView1QR2 = findViewById(R.id.textView1QR2);
+        Observable O6QR2 = Observable.just(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        //O6QR2
+
         //2.2
         Button0QR2 = findViewById(R.id.Button0QR2);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //3
         textView0QR3 = findViewById(R.id.textView0QR3);
+        /*URL BASE_URL = "https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"
+        Retrofit retrofitQR3 = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()*/
 
 
 
