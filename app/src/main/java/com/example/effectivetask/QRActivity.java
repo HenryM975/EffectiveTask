@@ -38,6 +38,7 @@ public class QRActivity extends AppCompatActivity {
     //2
     TextView textViewQR2;
     TextView textView1QR2;
+    TextView textView2QR2;
     Button Button0QR2;
     //3
     TextView textView0QR3;
@@ -115,10 +116,6 @@ public class QRActivity extends AppCompatActivity {
                 .filter(i -> i % 2 == 0)
                 .subscribe(i ->textViewQR2.setText(i.toString()));
 
-
-
-
-
         Observable o4QR2 = Observable.fromIterable(QR2List);
         //io.reactivex.Observable.range(1,100)
         o4QR2.flatMap(I -> Observable.just(I) //+
@@ -138,7 +135,8 @@ public class QRActivity extends AppCompatActivity {
         Observable O5QR2 = Observable.just(1);//.range(1, 10);
         O5QR2.subscribeOn(Schedulers.newThread())
                 .delay(2, TimeUnit.SECONDS)//первичная задержка
-                .interval(10, TimeUnit.MILLISECONDS)//промежуточный интервал без пропусков бесконечный
+                .interval(10, TimeUnit.SECONDS)//промежуточный интервал без пропусков бесконечный
+                .takeWhile(I -> I < 10)
                 .subscribe(I ->
                         runOnUiThread(new Runnable() {
                             @Override
@@ -149,12 +147,43 @@ public class QRActivity extends AppCompatActivity {
                         }));
 
 
+
+
+
+
+
+        Integer timeQR2 = 10;
         textView1QR2 = findViewById(R.id.textView1QR2);
-        Observable O6QR2 = Observable.just(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        //O6QR2
+        Observable O6QR2 = Observable.interval(timeQR2, TimeUnit.SECONDS)
+                .map(I -> " .+" + I);
+        Observable O7QR2 = Observable.interval(timeQR2, TimeUnit.SECONDS)
+                .map(I -> " .-" + I);
+        Observable O8QR2 = Observable.merge(O6QR2, O7QR2);
+        O8QR2.subscribeOn(Schedulers.newThread())
+                .subscribe(I ->
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                textView1QR2.append(I.toString());
+                                // Stuff that updates the UI
+                            }
+                        }));
+        textView2QR2 = findViewById(R.id.textView2QR2);
+        Observable O9QR2 = Observable.timer(10, TimeUnit.SECONDS);
+        O9QR2.repeat()
+        .subscribe(I ->
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView2QR2.append(I.toString());
+                        // Stuff that updates the UI
+                    }
+                }));
+
 
         //2.2
         Button0QR2 = findViewById(R.id.Button0QR2);
+        //Observable O10QR2 = Observable
 
 
 
