@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.auth.User;
+import com.google.gson.JsonObject;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,8 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -100,7 +105,7 @@ public class QRActivity extends AppCompatActivity {
         //});
 
 
-        //2
+        //2RX
         //2.1
         /*ArrayList<Integer> QR2List = new ArrayList<Integer>();
         for(int i = 0; i < 100; i++)
@@ -201,7 +206,7 @@ public class QRActivity extends AppCompatActivity {
 
 
 
-        //3
+        //3RF
         textView0QR3 = findViewById(R.id.textView0QR3);
         /*URL BASE_URL = "https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"
         Retrofit retrofitQR3 = new Retrofit.Builder()
@@ -209,6 +214,16 @@ public class QRActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()*/
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://run.mocky.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        TestRetrofit server = retrofit.create(TestRetrofit.class);
+        Call<QR3Data> userList = server.getList();
+
+        textView0QR3.setText(userList.toString());
+
 
 
 
