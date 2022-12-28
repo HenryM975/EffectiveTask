@@ -28,6 +28,8 @@ import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -47,6 +49,12 @@ public class QRActivity extends AppCompatActivity {
     Button Button0QR2;
     //3
     TextView textView0QR3;
+    TextView textView1QR3;
+    TextView textView2QR3;
+    TextView textView3QR3;
+    TextView textView4QR3;
+    TextView textView5QR3;
+
 
 
     @Override
@@ -208,6 +216,11 @@ public class QRActivity extends AppCompatActivity {
 
         //3RF
         textView0QR3 = findViewById(R.id.textView0QR3);
+        textView1QR3 = findViewById(R.id.textView1QR3);
+        textView2QR3 = findViewById(R.id.textView2QR3);
+        textView3QR3 = findViewById(R.id.textView3QR3);
+        textView4QR3 = findViewById(R.id.textView4QR3);
+        textView5QR3 = findViewById(R.id.textView5QR3);
         /*URL BASE_URL = "https://run.mocky.io/v3/53539a72-3c5f-4f30-bbb1-6ca10d42c149"
         Retrofit retrofitQR3 = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -220,9 +233,32 @@ public class QRActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         TestRetrofit server = retrofit.create(TestRetrofit.class);
-        Call<QR3Data> userList = server.getList();
+        Call<QR3Data> apiQR3 = server.getList();
 
-        textView0QR3.setText(userList.toString());
+        apiQR3.enqueue(new Callback<QR3Data>() {
+            @Override
+            public void onResponse(Call<QR3Data> call, Response<QR3Data> response) {
+                textView0QR3.setText(response.body().getDelivery()); //+
+                textView1QR3.setText(response.body().getId());
+                textView2QR3.setText(response.body().getBasket().get(0).getTitle());
+                textView3QR3.setText(Integer.toString(response.body().getBasket().get(0).getPrice()));
+                textView4QR3.setText(response.body().getBasket().get(1).getTitle());
+                textView5QR3.setText(Integer.toString(response.body().getBasket().get(1).getPrice()));
+            }
+
+            @Override
+            public void onFailure(Call<QR3Data> call, Throwable t) {
+                textView0QR3.setText(t.getMessage());
+                textView1QR3.setText(t.getMessage());
+                textView2QR3.setText(t.getMessage());
+                textView3QR3.setText(t.getMessage());
+                textView4QR3.setText(t.getMessage());
+                textView5QR3.setText(t.getMessage());
+            }
+        });
+
+
+        textView0QR3.setText(apiQR3.toString());
 
 
 
