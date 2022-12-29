@@ -48,6 +48,7 @@ dependencies {
     // Для использования RxJava c Retrofit
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.7.1"
 
+
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     //implementation 'com.squareup.retrofit2:converter-gson:2.0.0'

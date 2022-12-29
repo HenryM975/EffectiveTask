@@ -7,7 +7,6 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,22 +14,17 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.google.firebase.firestore.auth.User;
-import com.google.gson.JsonObject;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class QRActivity extends AppCompatActivity {
@@ -258,7 +252,12 @@ public class QRActivity extends AppCompatActivity {
         });
 
 
-        textView0QR3.setText(apiQR3.toString());
+        //4RF+RXQR4
+        Retrofit retrofit1 = new Retrofit.Builder()
+                .baseUrl("https://run.mocky.io/")//https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
 
 
 
