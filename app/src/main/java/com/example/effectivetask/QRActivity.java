@@ -4,9 +4,12 @@ package com.example.effectivetask;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +51,10 @@ public class QRActivity extends AppCompatActivity {
     TextView textView3QR3;
     TextView textView4QR3;
     TextView textView5QR3;
+    //4
+    //5
+    CardView QRCard5;
+    TextView textView0QR5;
 
 
 
@@ -256,12 +263,26 @@ public class QRActivity extends AppCompatActivity {
         Retrofit retrofit1 = new Retrofit.Builder()
                 .baseUrl("https://run.mocky.io/")//https://run.mocky.io/v3/6c14c560-15c6-4248-b9d2-b4508df7d4f5
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//!?
                 .build();
 
 
 
 
+
+
+
+        //5color
+        QRCard5 = findViewById(R.id.QRCard5);
+        textView0QR5 = findViewById(R.id.textView0QR5);
+        Observable O5QR5 = Observable.interval(2, TimeUnit.SECONDS);
+        O5QR5.subscribe(I -> runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                QRCard5.setCardBackgroundColor(Color.parseColor("#" + "00FFFF"));//Integer.parseInt(Integer.toHexString((Integer) I)));
+                textView0QR5.setText(I.toString());
+               }
+        }));
 
 
     }
