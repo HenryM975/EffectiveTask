@@ -9,7 +9,6 @@ import androidx.cardview.widget.CardView;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -275,12 +274,15 @@ public class QRActivity extends AppCompatActivity {
         //5color
         QRCard5 = findViewById(R.id.QRCard5);
         textView0QR5 = findViewById(R.id.textView0QR5);
-        Observable O5QR5 = Observable.interval(2, TimeUnit.SECONDS);
+        //String color = String.format("%6.0", Long.toHexString(12));
+        Observable O5QR5 = Observable.interval(1, TimeUnit.SECONDS);
         O5QR5.subscribe(I -> runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                QRCard5.setCardBackgroundColor(Color.parseColor("#" + "00FFFF"));//Integer.parseInt(Integer.toHexString((Integer) I)));
-                textView0QR5.setText(I.toString());
+                String color = Long.toHexString((Long) I);
+                String color1 = String.format("%6s", color).replace(" ", "0");
+                QRCard5.setCardBackgroundColor(Color.parseColor("#" + color1));//Integer.parseInt(Integer.toHexString((Integer) I)));
+                textView0QR5.setText(color1);//I.toString());
                }
         }));
 
