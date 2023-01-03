@@ -11,8 +11,8 @@
                 </shape>
         </item>
         <item>
-                <shape android:shape="ring" android:innerRadius="5dp"><!--?-->
-                        <solid android:color="@color/orange"></solid>
+                <shape android:shape="ring" android:innerRadius="5dp"  android:thickness="3dp" android:useLevel="false"><!--?-->
+                        <solid android:color="@color/yellow"></solid>
                 </shape>
         </item>
 </selector>
