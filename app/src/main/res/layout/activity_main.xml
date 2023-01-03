@@ -99,7 +99,7 @@
                         android:drawableTop="@drawable/phoneicon"
                         android:paddingTop="25dp"
                         tools:layout_editor_absoluteX="1dp"
-                        tools:layout_editor_absoluteY="0dp" />
+                        tools:layout_editor_absoluteY="0dp"/>
 
                     <TextView
                         android:id="@+id/imageEllipse0text"
