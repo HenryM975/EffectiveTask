@@ -252,8 +252,8 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/Botton0QR5"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:layout_margin="15dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
