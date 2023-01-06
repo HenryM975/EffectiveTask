@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="-2dp" android:left="-2dp">
+        <shape android:shape="ring" android:innerRadius="1dp"  android:thickness="1dp" android:useLevel="false" android:gravity="center"><!--?-->
+            <solid android:color="@color/yellow"></solid>
+        </shape>
+    </item>
+    <item android:top="3dp" android:left="-3dp">
+        <shape android:shape="ring" android:innerRadius="6dp"  android:thickness="2dp" android:useLevel="false" android:gravity="center"><!--?-->
+            <solid android:color="@color/yellow"></solid>
+        </shape>
+    </item>
+    <item android:top="2dp" android:left="2dp">
+        <shape android:shape="ring" android:innerRadius="11dp"  android:thickness="3dp" android:useLevel="false" android:gravity="center"><!--?-->
+            <solid android:color="@color/yellow"></solid>
+        </shape>
+    </item>
+    <item android:top="-4dp" android:left="4dp">
+        <shape android:shape="ring" android:innerRadius="17dp"  android:thickness="4dp" android:useLevel="false" android:gravity="center"><!--?-->
+            <solid android:color="@color/yellow"></solid>
+        </shape>
+    </item>
+    <item android:top="-5dp" android:left="-5dp">
+        <shape android:shape="ring" android:innerRadius="23dp"  android:thickness="5dp" android:useLevel="false" android:gravity="center"><!--?-->
+            <solid android:color="@color/yellow"></solid>
+        </shape>
+    </item>
+
+</layer-list>
